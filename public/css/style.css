@@ -477,9 +477,6 @@ i.modit:before {
 	font-weight: 700;
 	margin: 20px 0 10px 65px;
 }
-.blocks .block {
-	padding: 0 20px;
-}
 .blocks i {
 	float: left;
 	position: relative;
@@ -508,6 +505,9 @@ i.happiness:before {
 @media (min-width: 992px) {
 	.blocks .container {
 		padding: 40px 80px 15px;
+	}
+	.blocks .block {
+		padding: 0 20px;
 	}
 }
 /* ---------- 224. 3x3 ---------- */
@@ -625,7 +625,7 @@ i.cloud-sync:before {
 .ba .container {
 	max-width: none;
 	width: 100%;
-	padding: 60px 80px 75px;
+	padding: 60px 40px 75px;
 }
 .ba table {
 	font-size: 18px;
@@ -682,6 +682,9 @@ i.cloud-sync:before {
 	.ba table td {
 		padding: 0 40px;
 	}
+	.ba .container {
+		padding: 60px 80px 75px;
+	}
 }
 
 
@@ -690,7 +693,8 @@ i.cloud-sync:before {
 .testimonials {
 	/*background: #0c0c0c;*/
 	/*background: url(../images/cubes-overlay.png) repeat scroll #111;*/
-	background: url(../images/team-meeting.jpg) 50% 0 repeat fixed;
+	/*background: url(../images/team-meeting.jpg) 50% 0 repeat fixed;*/
+	background: url(../images/team-meeting.jpg) center repeat fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
