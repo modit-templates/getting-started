@@ -507,7 +507,7 @@ i.happiness:before {
 }
 @media (min-width: 992px) {
 	.blocks .container {
-		padding: 40px 80px;
+		padding: 40px 80px 15px;
 	}
 }
 /* ---------- 224. 3x3 ---------- */
