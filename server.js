@@ -12,8 +12,11 @@ app.engine('html', require('ejs').__express);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
 
+// set public directory to serve assets (css, js, images, etc)
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', function(req, res) {
-  res.render('main');
+  res.render('index');
 });
 
 listen();

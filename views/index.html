@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Title and Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+	<title>Modit</title>    	
+	
+	<!-- Google Fonts  -->	
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+	
+	<!-- CSS -->
+	<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'/>
+	<!--link href="css/font-awesome.css" rel="stylesheet" type="text/css" /-->
+	<link href="css/glyphicons.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	
+	<!-- Main Style -->
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	
+</head>
+<body>
+
+<!-- Header -->
+<section id="header">
+
+	<nav role="navigation" class="navbar navbar-modit navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a data-toggle="dropdown" class="navbar-brand dropdown-toggle" href="#">
+					<img ng-src="images/logo.svg" class="modit-logo" src="images/logo.svg">
+				</a>
+				<ul role="menu" class="dropdown-menu brand-menu">
+					<li><a target="_blank" ng-href="https://modit.desk.com" href="https://modit.desk.com">Documentation</a></li>
+					<li class="divider"></li>
+					<li><a ui-sref-opts="{ reload: true }" ui-sref="app.welcome.what" href="/welcome/what">What</a></li>
+					<li><a ui-sref-opts="{ reload: true }" ui-sref="app.welcome.why" href="/welcome/why">Why</a></li>
+					<li><a ui-sref-opts="{ reload: true }" ui-sref="app.welcome.how" href="/welcome/how">How</a></li>
+					<li><a ui-sref-opts="{ reload: true }" ui-sref="app.welcome.pricing" href="/welcome/pricing">Pricing</a></li>
+					<li><a ng-href="https://blog.beta.mod.it" href="https://blog.beta.mod.it">Blog</a></li>
+				</ul>
+				<button ng-click="openNav = !openNav" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		
+			<div ng-if="(currentUser | anonymous) || $state.includes('app.welcome')" collapse="!openNav" class="navbar-collapse ng-scope collapse" style="height: 0px;" id="navbar">
+				
+				<!--<p class="navbar-text" ng-if="welcomeTag">-->
+				<!--  <i class="text-lighter">{{welcomeTag}}</i>-->
+				<!--</p>-->
+				<p class="navbar-btn navbar-right">
+					<button ng-show="currentUser | anonymous" ui-sref-opts="{ reload: true }" ui-sref="app.welcome.signin" class="btn btn-success">
+						sign in</button>
+					<!--button ng-hide="currentUser | anonymous" ui-sref-opts="{ reload: true }" ui-sref="app.home" class="btn btn-default-dark ng-hide">
+						Dashboard</button-->
+				</p>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="block">
+						<a ui-sref-opts="{ reload: true }" ui-sref-active="active" class="text-base active" ui-sref="app.welcome.what" href="/welcome/what" class="active">welcome</a>
+					</li>
+					<li class="block">
+						<a ui-sref-opts="{ reload: true }" ui-sref-active="active" class="text-base" ui-sref="app.welcome.how" href="/welcome/how">how it works</a>
+					</li>
+					<li class="block">
+						<a ui-sref-opts="{ reload: true }" ui-sref-active="active" class="text-base" ui-sref="app.welcome.pricing" href="/welcome/pricing">pricing</a>
+					</li>
+					<li class="block">
+						<a ui-sref-opts="{ reload: true }" ui-sref-active="active" class="text-base" ui-sref="app.welcome.support" href="/welcome/support">support</a>
+					</li>
+					<li class="block">
+						<a ui-sref-opts="{ reload: true }" ui-sref-active="active" class="text-base" ui-sref="app.welcome.why" href="/welcome/why">about us</a>
+					</li>
+					<li class="block">
+						<a class="text-base" ng-href="https://blog.beta.mod.it" href="https://blog.beta.mod.it">blog</a>
+					</li>
+				</ul>
+			</div><!-- end ngIf: (currentUser | anonymous) || $state.includes('app.welcome') -->
+			
+			<!-- ngIf: !(currentUser | anonymous) -->
+			
+		</div>
+	</nav>
+</section><!-- /Header -->
+
+<!-- Top Banner -->
+<section id="home" class="top-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+
+				<h1>GET SOFTWARE DONE</h1>
+				<!--h2>With staging as a service</h2-->
+				<h4>A collaboration platform for staging and<br>reviewing live development</h4>
+
+				<button class="btn btn-success call-to-action">Try Modit for FREE!</button>
+
+			</div>
+		</div><!-- /row -->
+		<div class="row">
+			<div class="col-md-12">
+
+				<h2 class="text-center scrolldown"><a class="scrollarrow" href="#tagline"><i class="fa fa-angle-double-down"></i></a></h2>
+
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+</section>
+<!-- /Top Banner -->
+
+<!-- Tagline -->
+<section id="tagline" class="tagline">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<h1>YOUR <span class="highlight">APP</span> MEETS YOUR <span class="highlight">DREAMS</span></h1>
+				<p>Modit connects developers and stakeholders for supercharged agile development</p>
+
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+</section>
+<!-- /Tagline -->
+
+<!-- 4 Blocks -->
+<section id="blocks" class="blocks">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="block">
+					<div class="header">
+						<h1><i class="glyphicons imac"></i>Show more, show often</h1>
+					</div>
+					<p>Automatically stage your code as live product versions. You get real-time feedback for rapid iteration towards deployable functionality.</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="block">
+					<div class="header">
+						<h1><i class="glyphicons iphone_transfer"></i>Keep everyone in sync</h1>
+					</div>
+					<p>Simplify and centralize your communication.  Attach stakeholders feedback and discussion on every revision. </p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="block">
+					<div class="header">
+						<h1 class="ml80"><i class="modit cloud-deploy"></i>Automate deployments</h1>
+					</div>
+					<p>Don’t waste time manually deploying, maintaining and sharing staging environments.</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="block">
+					<div class="header">
+						<h1><i class="modit happiness"></i>Increase happiness</h1>
+					</div>
+					<p>Make stakeholders happier with greater visibility and input. More recognition and more reward. </p>
+				</div>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+</section>
+<!-- /4 Blocks -->
+
+<!-- 3 x 3 -->
+<section id="three" class="three">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+
+				<h1>What makes <span class="highlight">Modit</span> better?</h1>
+				<h2>Modit turns code commits into fully-functional product versions.<br>Sharing and discussion built-in.</h2>
+
+			</div>
+		</div><!-- /row -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-cubes"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Unlimited product versioning</h5>
+						<p>Every code revision becomes an independant, hosted and runnable product version vs. a single staging environment. It’s your code, live.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="modit cloud-sync"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Continuous and fully-automated</h5>
+						<p>Simple 1-time setup. Never waste developer time provisioning, deploying to and maintaining staging. Modit gets your dream app live in a few clicks.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-ban"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Staging never breaks</h5>
+						<p>Versions are independent snapshots that run on-demand and live forever, so staging never breaks when your codebase changes.</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- /row -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-users"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Built-in permissions and sharing</h5>
+						<p>Invite everyone - PMs, QAs, designers, clients, customers, the public - to review your progress. Never worry about manual permissions, URLs or passwords.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-comments"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Centralized, actionable feedback</h5>
+						<p>Comments are attached to each version, providing deeper targeted feedback on features, design and bugs for the next iteration.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-sitemap"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Parallel staging</h5>
+						<p>Directly compare multiple versions: review features in isolation, commits with different feature flags and multiple branches, all at once.</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- /row -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-check-square-o"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Integrated project management</h5>
+						<p>Attach reviewable versions to targets on Modit or stories on your existing PM tool. Definition of done becomes  production-ready.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-puzzle-piece"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Seamless, flexible integrations</h5>
+						<p>Use staging on its own, or add it to an existing CI / CD workflow. Need help with an integration? All you have to do is <a href="">ask</a>.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box">
+					<div class="icon-box-icon icon-box-icon-square">
+						<i class="fa fa-database"></i>
+					</div>
+					<div class="icon-box-content">
+						<h3 class="highlight">Application agnostic</h5>
+						<p>Any type of web application can be made to run on Modit. Most require little to no setup at all.  <a href="">Get started.</a></p>
+					</div>
+				</div>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+</section>
+<!-- /3 x 3 -->
+
+
+<!-- Before / After -->
+<section id="ba" class="ba">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+
+				<table>
+					<tr>
+						<th>BEFORE MODIT</th>
+						<th><i class="fa fa-long-arrow-right"></i></th>
+						<th>AFTER MODIT</th>
+					</tr>
+					<tr class="odd">
+						<td>Pain of deploying to/maintaining staging</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td>Fully <span class="highlight">automated</span> deployments</td>
+					</tr>
+					<tr>
+						<td>Coordinate staging on a single environment</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td><span class="highlight">Unlimited</span>, parallel staging versions</td>
+					</tr>
+					<tr class="odd">
+						<td>New commits overwrite &amp; break staging</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td>Independent versions <span class="highlight">live forever</span></td>
+					</tr>
+					<tr>
+						<td>Manual permissions, URLs and pws</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td>Built-in team sharing and permissions</td>
+					</tr>
+					<tr class="odd">
+						<td>Scattered, disorganized feedback</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td><span class="highlight">Centralized</span> feedback on each version</td>
+					</tr>
+					<tr>
+						<td>Ambiguous “definition of done”</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td>“Done” = deployable product version on Modit</td>
+					</tr>
+					<tr class="odd">
+						<td>Getting single feature to “done” &gt;2 weeks</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td>Single feature to “done” &lt; few days</td>
+					</tr>
+					<tr>
+						<td>$30+/month for one instance on AWS/Heroku</td>
+						<td><i class="fa fa-long-arrow-right"></i></td>
+						<td>$30/month for unlimited staging/dev instances</td>
+					</tr>
+				</table>
+
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+</section>
+<!-- /Before / After -->
+
+<!-- Testimonials -->
+<section id="testimonials" class="testimonials " data-speed="20">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+
+				<h1>What <span class="highlight">customers</span> are saying about <span class="highlight">Modit</span></h1>
+
+			</div>
+		</div><!-- /row -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="test-box">
+					<div class="test-icon">
+						<img src="images/mf-logo.png">
+					</div>
+					<h3>An agile software development firm</h3>
+					<div class="test-content">
+						<p>“Modit allows us to get feedback and iterate on each individual feature as it’s built, instead of waiting until the end of a sprint.”</p>
+					</div>
+					<div class="test-person text-right">Casey Gibbons, Product Manager</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="test-box">
+					<div class="test-icon">
+						<img src="images/dc-logo.png">
+					</div>
+					<h3>Build custom data apps for enterprise clients</h3>
+					<div class="test-content">
+						<p>“It was a nightmare to deal with separate email threads for client feedback. Modit puts all our communication in one place for easy access.”</p>
+					</div>
+					<div class="test-person text-right">Brian Poole, Application Developer</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="test-box">
+					<div class="test-icon">
+						<img src="images/fc-logo.png">
+					</div>
+					<h3>A personalized learning SaaS startup</h3>
+					<div class="test-content">
+						<p>“Modit bridges the communication divide with my developers. [I know exactly what they are building.] They understand and deliver exactly what I want.”</p>
+					</div>
+					<div class="test-person text-right">Ben Williams, CEO</div>
+				</div>
+			</div>
+		</div><!-- /row -->
+		<div class="row text-center">
+			<button class="btn btn-success call-to-action inverse">Try Modit for FREE!</button>
+		</div>
+	</div><!-- /container -->
+</section>
+<!-- /Testimonials -->
+
+<!-- Footer -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h3 class="highlight">MODIT</h3>
+				<p>A Powerful New Approach for <br>Agile Software Development Teams</p>
+				<div class="icons">
+					<div class="nick">
+						<img src="images/nicholas-phage-target.svg">
+					</div>
+					<div class="socials">
+						<ul>
+							<li>
+								<a class="twitter" href="https://twitter.com/mod_it"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a class="google" href="https://plus.google.com/+ModIt1"><i class="fa fa-google-plus"></i></a>
+							</li>
+							<li>
+								<a class="linkedin" href="https://www.linkedin.com/company/modit-inc"><i class="fa fa-linkedin"></i></a>
+							</li>
+						</ul>
+						<div class="copyright">&copy; 2015 Modit, Inc.</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="footer-menu">
+					<ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">Blog</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Terms of Use</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Jobs</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="questions">
+					<div>Have Questions?</div>
+					<div class="highlight"><button class="btn btn-success">Ask Us Anything</button></div>
+					<div class="small">...and we'll get back to you soon!</div >
+				</div>
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+</footer>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>	   	
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script>
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 1){  
+			$('nav').addClass("sticky");
+		}
+		else{
+			$('nav').removeClass("sticky");
+		}
+	});
+	
+	$('a.scrollarrow').click(function(){
+	    $('html, body').animate({
+	        scrollTop: $( $.attr(this, 'href') ).offset().top - 70
+	    }, 500);
+	    return false;
+	});
+	
+	$('section.parallax').each(function(){
+		var $bgobj = $(this); // assigning the object
+		$(window).scroll(function() {
+			var yPos = -($(window).scrollTop() / $bgobj.data('speed'));
+			var coords = '50% '+ yPos + 'px';
+		$bgobj.css({ backgroundPosition: coords });
+		});
+	});
+</script>
+
+<!-- /Scripts -->
+
+</body>
+</html>
